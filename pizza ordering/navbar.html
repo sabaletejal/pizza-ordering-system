@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0;
+        }
+        .nav {
+            background-color: rgb(8, 8, 8);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        li {
+            list-style-type: none;
+            padding: 20px;
+        }
+
+        .menu_list {
+            display: flex;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        a:hover {
+            color:rgb(255, 200, 0);
+        }
+
+        a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background-color:rgb(255, 200, 0);
+            display: block;
+            transition: all 3s;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .Service {
+            position: relative;
+        }
+
+        .Service:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            width: 200px;
+            position: absolute;
+            background-color:rgb(255, 200, 0);
+            top: 60px;
+            right: -60px;
+        }
+
+        .fa-bars {
+            display: none;
+        }
+
+        input {
+            display: none;
+        }
+
+        .all_cat {
+            display: none;
+        }
+
+        .fa-plus {
+            display: none;
+        }
+
+        .fa-heart {
+            margin-left: 20px;
+        }
+
+        .fa-circle-user {
+            margin-left: 20px;
+        }
+        i{
+          color: white;
+        }
+
+
+
+        @media (max-width:400px) {
+            .menu_list {
+                display: none;
+
+            }
+
+            input:checked~.menu_list {
+                display: block;
+                position: absolute;
+                top: 1px;
+                width: 70%;
+                margin-top: 75px;
+                margin-left: 30%;
+                background-color:rgb(255, 200, 0);
+            }
+
+            .all_cat {
+                display: block;
+
+            }
+
+            a::after {
+
+                background-color:rgb(255, 200, 0);
+            }
+
+            a:hover::after {
+                width: 25%;
+            }
+
+            .Service {
+                position: relative;
+            }
+
+            .Service:hover .dropdown {
+                display: block;
+            }
+
+            li {
+                border-bottom: 1px solid rgb(166, 165, 165);
+            }
+
+            .fa-xmark {
+                margin-left: 122px;
+            }
+
+            .fa-plus {
+                display: block;
+                margin-left: 210px;
+            }
+
+            .fa-bars {
+                display: block;
+                padding: 30px;
+            }
+
+            a:hover {
+                color: white;
+            }
+
+            .dropdown {
+                display: none;
+                width: 280px;
+                position: absolute;
+                background-color:rgb(255, 200, 0);  
+                top: 70px;
+                left: 1px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="nav">
+
+        <div style="margin-left: 40px;">
+            <img src="https://the-pizza-home.myshopify.com/cdn/shop/files/logo_300x300.png?v=1630475226" width="80px" alt="">
+        </div>
+
+        <input type="checkbox" name="" id="menu_check">
+        <label for="menu_check"><i class="fa-solid fa-bars"></i></label>
+
+
+        <ul class="menu_list">
+            <li><a class="all_cat" href="">
+                    <b>All Category</b><i class="fa-solid fa-xmark"></i></a>
+            </li>
+            <li><a class="menu" href="">Home<i class="fa-solid fa-plus"></i></a></li>
+            <li><a class="menu" href="">Pizza<i class="fa-solid fa-plus"></i></a></li>
+            <li class="Service">
+                <a href="">Menu <i style="font-size: small;" class="fa-solid fa-angle-down"></i> 
+                    <input class="plus_check" type="checkbox" name="" id="plus_service">
+                
+                <label for="plus_service"><i class="fa-solid fa-plus"></i></label></a>
+                <ul class="dropdown">
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Onion Blossom Pizza</a>
+                    </li>
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Spicy Chees Piza</a>
+                    </li>
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Four Chesse Pizza</a>
+                    </li>
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Chicken Sausage Pizza </a>
+                    </li>
+                </ul>
+
+            </li>
+            <li><a class="menu" href="">Shop<i class="fa-solid fa-plus"></i></a></li>
+            <li><a class="menu" href="">Pages<i class="fa-solid fa-plus"></i></a></li>
+            <li><a class="menu" href="">Contact<i class="fa-solid fa-plus"></i></a></li>
+            <div style="padding: 20px;margin-right: 60px;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-circle-user"></i>
+            </div>
+        </ul>
+    </div>
+</body>
+
+</html>
